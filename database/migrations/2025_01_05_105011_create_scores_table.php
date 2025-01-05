@@ -6,22 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->float('score');
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('scores');
     }
 };
